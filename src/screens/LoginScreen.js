@@ -54,14 +54,14 @@ export default function LoginScreen({ navigation }) {
 				errorText={password.error}
 				secureTextEntry
 			/>
+			<Button mode="contained" onPress={onLoginPressed}>
+				Iniciar sesión
+			</Button>
 			<View style={styles.termsPrincipal}>
 				<TouchableOpacity>
 					<Text style={styles.terms}>Al continuar, acepta términos y condiciones.</Text>
 				</TouchableOpacity>
 			</View>
-			<Button mode="contained" onPress={onLoginPressed}>
-				Iniciar sesión
-			</Button>
 		</Background>
 	)
 }
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     marginBottom: 20,
-	  marginTop: 20
   },
   terms: {
     fontSize: 13,
