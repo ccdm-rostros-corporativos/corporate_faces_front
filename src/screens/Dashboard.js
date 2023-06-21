@@ -11,7 +11,7 @@ export default function Dashboard({ navigation }) {
         <Background style={{ padding:10 }} >
           <Logo style={styles.logo} />
           <Header style={styles.header} >Rostros Corporativos</Header>
-          <Button mode="text" >Búsqueda geolocalizada</Button>
+          <Button mode="text" onPress={ () => {navigation.navigate("HeadquarterScreen")} }>Búsqueda geolocalizada</Button>
           <Button mode="text" >Búsqueda por filtros</Button>
           <Button mode="text" style={styles.button}>Búsqueda por referencia</Button>
         </Background>

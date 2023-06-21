@@ -22,7 +22,7 @@ export const BottomTab = () => {
 
           let iconName = ''
           switch( route.name ) {
-            case 'Dashboard':
+            case 'Inicio':
               iconName = focused ? 'home' : 'home-outline';
               break;
             case 'Dashboardos':
@@ -34,7 +34,7 @@ export const BottomTab = () => {
         }
       })}
     >
-      <Tab.Screen name="Dashboard" component={Dashboard} />
+      <Tab.Screen name="Inicio" component={Dashboard} />
       <Tab.Screen name="Dashboardos" component={Dashboard} />
     </Tab.Navigator>
   )
