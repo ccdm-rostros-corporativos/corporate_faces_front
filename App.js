@@ -4,29 +4,47 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react'
 import { Provider } from 'react-native-paper'
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { theme } from './src/core/theme'
-import LoginScreen from './src/screens/LoginScreen';
-import { BottomTab } from './src/components/BottomTab';
-import HeadquarterScreen from './src/screens/HeadquarterScreen';
+import Icon from 'react-native-vector-icons/Ionicons'
+import { HomeNavigation, SearchNavigation } from './CustomNavigation';
 
-const Stack = createStackNavigator()
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <Provider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="StartScreen"
-          screenOptions={{
-            headerShown: false,
+        <Tab.Navigator
+          backBehaviour="Home"
+          tabBarOptions={{
+            activeTintColor: '#1e90ff',
+            inactiveTintColor: 'white',
+            activeBackgroundColor: theme.colors.secondary,
+            inactiveBackgroundColor: theme.colors.secondary,
           }}
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+
+              let iconName = ''
+              switch (route.name) {
+                case 'Inicio':
+                  iconName = focused ? 'home' : 'home-outline';
+                  break;
+                case 'Dashboardos':
+                  iconName = focused ? 'person-circle' : 'person-circle-outline';
+                  break;
+              }
+
+              return <Icon name={iconName} size={size} color={color} />
+            }
+          })}
         >
-          {/* <Stack.Screen name="LoginScreen" component={LoginScreen} /> */}
-          <Stack.Screen name="BottomTab" component={BottomTab} />
-          <Stack.Screen name="HeadquarterScreen" component={HeadquarterScreen} />
-        </Stack.Navigator>
+          <Tab.Screen name="Inicio" component={HomeNavigation} />
+          <Tab.Screen name="Dashboardos" component={SearchNavigation} />
+
+        </Tab.Navigator>
       </NavigationContainer>
     </Provider>
   )
