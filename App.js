@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { theme } from './src/core/theme'
 import Dashboard from './src/screens/Dashboard';
 import LoginScreen from './src/screens/LoginScreen';
+import EmployeesList from './src/screens/EmployeesList';
 
 const Stack = createStackNavigator()
 
@@ -24,6 +25,7 @@ export default function App() {
         >
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="EmployeesList" component={EmployeesList} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
