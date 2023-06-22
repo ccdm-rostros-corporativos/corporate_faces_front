@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TouchableOpacity, StyleSheet, View } from 'react-native'
+import { TouchableOpacity, StyleSheet, View, Alert } from 'react-native'
 import { Text } from 'react-native-paper'
 import Background from '../components/Background'
 import Logo from '../components/Logo'
@@ -15,18 +15,35 @@ export default function LoginScreen({ navigation }) {
 	const [email, setEmail] = useState({ value: '', error: '' })
 	const [password, setPassword] = useState({ value: '', error: '' })
 
-	const onLoginPressed = () => {
+	const onLoginPressed = async () => {
 		const emailError = emailValidator(email.value)
 		const passwordError = passwordValidator(password.value)
 		if (emailError || passwordError) {
-		setEmail({ ...email, error: emailError })
-		setPassword({ ...password, error: passwordError })
-		return
+      setEmail({ ...email, error: emailError })
+      setPassword({ ...password, error: passwordError })
+      return
 		}
-		navigation.reset({
-		index: 0,
-		routes: [{ name: 'BottomTab' }],
-		})
+    const user = {
+      email: email.value,
+      password: password.value
+    }
+    const response = await fetch('http://localhost:3000/api/auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
+    const data = await response.json()
+    if (data.error) {
+      Alert.alert('Credenciales incorrectas', 'Correo o contraseña inválida')
+    }
+    else {
+      navigation.reset({
+      index: 0,
+      routes: [{ name: 'Dashboard' }],
+      })
+    }
 	}
 
 	return (
