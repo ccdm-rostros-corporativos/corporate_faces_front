@@ -9,6 +9,8 @@ export default function Button({ mode, style, ...props }) {
       style={[
         styles.button,
         mode === 'outlined' && { backgroundColor: theme.colors.surface },
+        mode === 'menu' && { backgroundColor: theme.colors.gray },
+        mode === 'text' && { backgroundColor: theme.colors.gray, textColor:theme.colors.secondary },
         style,
       ]}
       labelStyle={styles.text}
@@ -21,9 +23,9 @@ export default function Button({ mode, style, ...props }) {
 const styles = StyleSheet.create({
   button: {
     width: '100%',
-    marginVertical: 20,
+    marginVertical: 15,
     paddingVertical: 2,
-    marginTop: 25
+    // marginTop: 25,
   },
   text: {
     fontWeight: 'bold',
