@@ -1,10 +1,21 @@
-import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
-import Dashboard from './src/screens/Dashboard';
-import HeadquarterScreen from './src/screens/HeadquarterScreen';
-
+import { createStackNavigator } from '@react-navigation/stack'
+import LoginScreen from './screens/LoginScreen';
+import Dashboard from './screens/Dashboard';
+import HeadquarterScreen from './screens/HeadquarterScreen';
+import { BottomTab } from './BottomTab'
 
 const Stack = createStackNavigator()
+
+export default props => (
+  <Stack.Navigator
+      initialRouteName='Login'
+      screenOptions={{ headerShown: false }}
+  >
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Home" component={BottomTab} />
+  </Stack.Navigator>
+)
 
 export const HomeNavigation = () => {
   return (
