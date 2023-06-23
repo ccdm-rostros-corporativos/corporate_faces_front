@@ -5,6 +5,7 @@ import * as Location from 'expo-location';
 
 import Background from '../components/Background'
 import { theme } from '../core/theme'
+import {baseUrl} from '../config'
 
 export default function HeadquarterScreen({ navigation }) {
 
@@ -32,7 +33,7 @@ export default function HeadquarterScreen({ navigation }) {
 
   const getHeadquarters = async () => {
     try {
-      const response = await fetch('http://192.168.112.1:3000/api/headquarter');
+      const response = await fetch(`${baseUrl.LH}/headquarter`);
       const json = await response.json();
       setHeadquarters(json);
     } catch (error) {
@@ -60,3 +61,11 @@ export default function HeadquarterScreen({ navigation }) {
     </Background>
   )
 }
+
+
+const styles = StyleSheet.create({
+  map: {
+    width: '100%',
+    height: '40%',
+  },
+});
