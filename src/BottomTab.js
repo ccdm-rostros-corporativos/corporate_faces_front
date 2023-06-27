@@ -13,6 +13,8 @@ export const BottomTab = () => {
     <Tab.Navigator
       backBehaviour="Login"
       screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarLabelStyle: {fontSize:15},
         "tabBarActiveTintColor": "#1e90ff",
         "tabBarInactiveTintColor": "white",
         "tabBarActiveBackgroundColor": theme.colors.secondary,
@@ -30,8 +32,8 @@ export const BottomTab = () => {
             case 'Inicio':
               iconName = focused ? 'home' : 'home-outline';
               break;
-            case 'Busqueda':
-              iconName = focused ? 'information-circle' : 'information-circle-outline';
+            case 'Búsqueda':
+              iconName = focused ? 'person-circle' : 'person-circle-outline';
               break;
           }
 
@@ -40,7 +42,7 @@ export const BottomTab = () => {
       })}
     >
       <Tab.Screen name="Inicio" component={HomeNavigation} />
-      <Tab.Screen name="Busqueda" component={SearchNavigation} />
+      <Tab.Screen name="Búsqueda" component={SearchNavigation} />
 
     </Tab.Navigator>
   )

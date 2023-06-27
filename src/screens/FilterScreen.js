@@ -54,8 +54,8 @@ export default function FilterScreen({ navigation, route }) {
     return (
       <ScrollView>
         <Background style={{ padding: 10 }}>
-          <Header style={{fontSize: 28, color: theme.colors.secondary, fontWeight: 'bold', paddingVertical: 12, textAlign: 'center'}}>Busqueda de personal</Header>
-          <Text style={{fontSize: 18, marginBottom: 7, marginTop: 15}}>Area o departamento</Text>
+          <Header style={{fontSize: 28, color: theme.colors.secondary, fontWeight: 'bold', paddingVertical: 12, textAlign: 'center'}}>Búsqueda de personal</Header>
+          <Text style={{fontSize: 18, marginBottom: 7, marginTop: 15}}>Área o departamento</Text>
           <Dropdown
             style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
             placeholderStyle={styles.placeholderStyle}
@@ -67,7 +67,7 @@ export default function FilterScreen({ navigation, route }) {
             maxHeight={300}
             labelField="label"
             valueField="value"
-            placeholder={!isFocus ? 'Select item' : '...'}
+            placeholder={!isFocus ? 'Selecciona una opción' : '...'}
             searchPlaceholder="Search..."
             value={workArea}
             onFocus={() => setIsFocus(true)}
@@ -86,7 +86,7 @@ export default function FilterScreen({ navigation, route }) {
             autoCompleteType="name"
           />
           <TextInput
-            label="Cargo u ocupacion"
+            label="Cargo u ocupación"
             returnKeyType="next"
             value={position}
             onChangeText={(text) => setPosition(text)}

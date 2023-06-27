@@ -12,7 +12,7 @@ export default function Dashboard({ navigation }) {
           <Logo style={styles.logo} />
           <Header style={styles.header} >Rostros Corporativos</Header>
           <Button mode="text" style={styles.button} onPress={ () => {navigation.navigate("HeadquartersScreen")} }>Búsqueda geolocalizada</Button>
-          <Button mode="text" style={styles.button} >Búsqueda por filtros</Button>
+          <Button mode="text" style={styles.button} onPress={ () => {navigation.navigate("FilterScreen")} }>Búsqueda por filtros</Button>
           <Button mode="text" style={styles.button}>Búsqueda por referencia</Button>
         </Background>
     )

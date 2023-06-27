@@ -21,14 +21,13 @@ export default props => (
 export const HomeNavigation = () => {
   return (
     <Stack.Navigator
-      // initialRouteName="Home"
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
       }}
     >
-      <Stack.Screen name="Home" component={Dashboard} />
-      <Stack.Screen name="HeadquartersScreen" component={HeadquartersScreen} />
-      <Stack.Screen name="FilterScreen" component={FilterScreen} />
+      <Stack.Screen name="Home" component={Dashboard} options={{title: "Menú"}} />
+      <Stack.Screen name="HeadquartersScreen" component={HeadquartersScreen} options={{title: "Geolocalización"}} />
+      <Stack.Screen name="FilterScreen" component={FilterScreen} options={{title: "Filtros"}} />
     </Stack.Navigator>
   )
 }
@@ -36,12 +35,12 @@ export const HomeNavigation = () => {
 export const SearchNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="StartScreen"
+      // initialRouteName="StartScreen"
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
       }}
     >
-      <Stack.Screen name="FilterScreen" component={FilterScreen} />
+      <Stack.Screen name="FilterScreen" component={FilterScreen} options={{title: "Filtros"}} />
     </Stack.Navigator>
   )
 }

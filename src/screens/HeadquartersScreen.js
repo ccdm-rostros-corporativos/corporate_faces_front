@@ -68,7 +68,7 @@ export default function HeadquartersScreen({ navigation }) {
   if (location) {
     return (
       <Background style={{ padding: 10 }} >
-        <Text style={styles.title} >La sede mas cerca a tu ubicacion es {closestHeadquarter.name}</Text>
+        <Text style={styles.title} >La sede más cercana a tu ubicación es {closestHeadquarter.name}</Text>
         <MapView style={styles.map}>
           {headquarters.map((headquarter) => {
             return (
@@ -84,8 +84,8 @@ export default function HeadquartersScreen({ navigation }) {
           <Marker
             key={location.latitude}
             coordinate={{ latitude: location.coords.latitude, longitude: location.coords.longitude }}
-            title="Tu ubicacion"
-            description="Aqui estas tu"
+            title="Tu ubicación"
+            description="Aquí estas tú"
           />
         </MapView>
         <Button mode="contained" onPress={ () => {navigation.navigate("FilterScreen", selectedHeadquarter)} }>
