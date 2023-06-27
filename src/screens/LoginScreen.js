@@ -9,6 +9,7 @@ import TextInput from '../components/TextInput'
 import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
+import {baseUrl} from '../config'
 
 export default function LoginScreen({ navigation }) {
 
@@ -27,7 +28,7 @@ export default function LoginScreen({ navigation }) {
       email: email.value,
       password: password.value
     }
-    const response = await fetch('http://localhost:3000/api/auth', {
+    const response = await fetch(`${baseUrl.LH}/auth`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -61,6 +62,7 @@ export default function LoginScreen({ navigation }) {
 				autoCompleteType="email"
 				textContentType="emailAddress"
 				keyboardType="email-address"
+				style={{marginTop:15}}
 			/>
 			<TextInput
 				label="Password"
@@ -70,6 +72,7 @@ export default function LoginScreen({ navigation }) {
 				error={!!password.error}
 				errorText={password.error}
 				secureTextEntry
+				style={{marginBottom:15}}
 			/>
 			<Button mode="contained" onPress={onLoginPressed}>
 				Iniciar sesión
@@ -87,7 +90,7 @@ const styles = StyleSheet.create({
   termsPrincipal: {
     width: '100%',
     alignItems: 'center',
-    marginBottom: 20,
+    marginVertical: 20,
   },
   terms: {
     fontSize: 13,
