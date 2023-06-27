@@ -41,7 +41,7 @@ export const SearchNavigation = () => {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Home" component={Dashboard} />
+      <Stack.Screen name="FilterScreen" component={FilterScreen} />
     </Stack.Navigator>
   )
 }

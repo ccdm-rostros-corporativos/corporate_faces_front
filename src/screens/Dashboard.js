@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
     marginVertical:15
   },
   button: {
-    height: 50
+    height: 50,
+    color: theme.colors.secondary,
+    backgroundColor: '#cdcdcd'
   }
 })

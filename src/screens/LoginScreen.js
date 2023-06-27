@@ -62,6 +62,7 @@ export default function LoginScreen({ navigation }) {
 				autoCompleteType="email"
 				textContentType="emailAddress"
 				keyboardType="email-address"
+				style={{marginTop:15}}
 			/>
 			<TextInput
 				label="Password"
@@ -71,6 +72,7 @@ export default function LoginScreen({ navigation }) {
 				error={!!password.error}
 				errorText={password.error}
 				secureTextEntry
+				style={{marginBottom:15}}
 			/>
 			<Button mode="contained" onPress={onLoginPressed}>
 				Iniciar sesión
@@ -88,7 +90,7 @@ const styles = StyleSheet.create({
   termsPrincipal: {
     width: '100%',
     alignItems: 'center',
-    marginBottom: 20,
+    marginVertical: 20,
   },
   terms: {
     fontSize: 13,

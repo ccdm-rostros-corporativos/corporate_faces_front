@@ -30,8 +30,8 @@ export const BottomTab = () => {
             case 'Inicio':
               iconName = focused ? 'home' : 'home-outline';
               break;
-            case 'Dashboardos':
-              iconName = focused ? 'person-circle' : 'person-circle-outline';
+            case 'Busqueda':
+              iconName = focused ? 'information-circle' : 'information-circle-outline';
               break;
           }
 
@@ -40,7 +40,7 @@ export const BottomTab = () => {
       })}
     >
       <Tab.Screen name="Inicio" component={HomeNavigation} />
-      <Tab.Screen name="Dashboardos" component={SearchNavigation} />
+      <Tab.Screen name="Busqueda" component={SearchNavigation} />
 
     </Tab.Navigator>
   )

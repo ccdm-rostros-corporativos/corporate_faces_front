@@ -7,14 +7,17 @@ export default function Button({ mode, style, ...props }) {
   return (
     <PaperButton
       style={[
-        styles.button,
+        mode != 'filter' && styles.button,
         mode === 'outlined' && { backgroundColor: theme.colors.surface },
         mode === 'menu' && { backgroundColor: theme.colors.gray },
-        mode === 'text' && { backgroundColor: theme.colors.gray, textColor:theme.colors.secondary },
-        mode === 'search' && { backgroundColor: theme.colors.gray },
+        mode === 'text' && { backgroundColor: theme.colors.gray, color: theme.colors.secondary },
+        mode === 'search' && { backgroundColor: theme.colors.secondary },
+        mode === 'filter' && { backgroundColor: theme.colors.secondary, width: '100%', marginVertical: 1 },
         style,
       ]}
-      labelStyle={styles.text}
+      labelStyle={[
+        mode != 'filter' ? { fontWeight: 'bold', fontSize: 15, lineHeight: 26 } : styles.text
+      ]}
       mode={mode}
       {...props}
     />
@@ -32,5 +35,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     lineHeight: 26,
+    color: theme.colors.secondary
   },
 })
