@@ -11,6 +11,7 @@ export default function Button({ mode, style, ...props }) {
         mode === 'outlined' && { backgroundColor: theme.colors.surface },
         mode === 'menu' && { backgroundColor: theme.colors.gray },
         mode === 'text' && { backgroundColor: theme.colors.gray, textColor:theme.colors.secondary },
+        mode === 'search' && { backgroundColor: theme.colors.gray },
         style,
       ]}
       labelStyle={styles.text}

@@ -2,7 +2,8 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import LoginScreen from './screens/LoginScreen';
 import Dashboard from './screens/Dashboard';
-import HeadquarterScreen from './screens/HeadquarterScreen';
+import HeadquartersScreen from './screens/HeadquartersScreen';
+import FilterScreen from './screens/FilterScreen';
 import { BottomTab } from './BottomTab'
 
 const Stack = createStackNavigator()
@@ -20,13 +21,14 @@ export default props => (
 export const HomeNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      // initialRouteName="Home"
       screenOptions={{
         headerShown: false,
       }}
     >
       <Stack.Screen name="Home" component={Dashboard} />
-      <Stack.Screen name="HeadquarterScreen" component={HeadquarterScreen} />
+      <Stack.Screen name="HeadquartersScreen" component={HeadquartersScreen} />
+      <Stack.Screen name="FilterScreen" component={FilterScreen} />
     </Stack.Navigator>
   )
 }
